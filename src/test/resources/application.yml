@@ -1,0 +1,40 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+
+spring:
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:mem:test
+    username: gildedrose
+    password: gildedrose
+    driverClassName: org.h2.Driver
+
+  data:
+    rest:
+      base-path: /api/gilded-rose
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    root: INFO
+    com.miw.gildedrose: DEBUG
+
+gildedrose:
+  surge:
+    threshold: 10
+    offset: 1
+    price_increase: 10

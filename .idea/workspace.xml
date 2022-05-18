@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="49d8391d-56a8-49c7-bf00-8657940d1a7e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="295GOA6V8FTccVz8EdAghefz3i1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.48045978" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.miw.gildedrose.controller" />
+      <recent name="com.miw.gildedrose" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.miw.gildedrose.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GildedRoseApp">
+    <configuration name="GildedRoseAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gilded-rose" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.miw.gildedrose.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.miw.gildedrose" />
+      <option name="MAIN_CLASS_NAME" value="com.miw.gildedrose.GildedRoseAppTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gilded-rose" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.miw.gildedrose.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.miw.gildedrose.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.miw.gildedrose.controller.ItemControllerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemControllerIntegrationTest.buyItemUnauthorizedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gilded-rose" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.miw.gildedrose.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.miw.gildedrose.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.miw.gildedrose.controller.ItemControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="buyItemUnauthorizedTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemControllerIntegrationTest.givenItemsFetchItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gilded-rose" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.miw.gildedrose.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.miw.gildedrose.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.miw.gildedrose.controller.ItemControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="givenItemsFetchItems" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemControllerIntegrationTest.viewItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gilded-rose" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.miw.gildedrose.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.miw.gildedrose.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.miw.gildedrose.controller.ItemControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="viewItem" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GildedRoseApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gilded-rose" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.miw.gildedrose.GildedRoseApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ItemControllerIntegrationTest.buyItemUnauthorizedTest" />
+        <item itemvalue="JUnit.ItemControllerIntegrationTest" />
+        <item itemvalue="JUnit.ItemControllerIntegrationTest.viewItem" />
+        <item itemvalue="JUnit.ItemControllerIntegrationTest.givenItemsFetchItems" />
+        <item itemvalue="JUnit.GildedRoseAppTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49d8391d-56a8-49c7-bf00-8657940d1a7e" name="Changes" comment="" />
+      <created>1652395500716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652395500716</updated>
+      <workItem from="1652395505036" duration="424000" />
+      <workItem from="1652395972907" duration="305000" />
+      <workItem from="1652396407296" duration="10000" />
+      <workItem from="1652396432377" duration="748000" />
+      <workItem from="1652398113880" duration="75580000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
