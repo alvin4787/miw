@@ -12,6 +12,14 @@ import java.time.LocalDateTime;
 @Table(name = "item_view_count")
 public class ItemViewCountEntity extends BaseEntity{
 
+    public ItemViewCountEntity() {
+    }
+
+    public ItemViewCountEntity(ItemEntity item, int viewCount) {
+        this.item = item;
+        this.viewCount = viewCount;
+    }
+
     @JoinColumn(name = "item_id")
     @OneToOne
     private ItemEntity item;

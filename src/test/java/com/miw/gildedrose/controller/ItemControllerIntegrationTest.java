@@ -5,12 +5,10 @@ import com.miw.gildedrose.GildedRoseApp;
 import com.miw.gildedrose.controller.response.ItemListResponse;
 import com.miw.gildedrose.dao.ItemDao;
 import com.miw.gildedrose.dao.UserDao;
-import com.miw.gildedrose.entity.ItemEntity;
 import com.miw.gildedrose.entity.UserEntity;
 import com.miw.gildedrose.model.ItemModel;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -96,19 +94,6 @@ public class ItemControllerIntegrationTest {
                                 .header("Authorization", "Bearer " + RandomStringUtils.randomAlphabetic(20))
                 )
                 .andExpect(MockMvcResultMatchers.status().isUnauthorized());
-    }
-
-    @BeforeAll
-    public void loadData() {
-        userDao.save(new UserEntity("Alvin", "Paul", "alvin@gmail.com", RandomStringUtils.randomAlphabetic(20)));
-        userDao.save(new UserEntity("Ryan", "Philips", "ryan@gmail.com", RandomStringUtils.randomAlphabetic(20)));
-        userDao.save(new UserEntity("Greg", "George", "greg@gmail.com", RandomStringUtils.randomAlphabetic(20)));
-        userDao.save(new UserEntity("Mathew", "Jocob", "mathew@gmail.com", RandomStringUtils.randomAlphabetic(20)));
-        userDao.save(new UserEntity("Allen", "Paul", "allen@gmail.com", RandomStringUtils.randomAlphabetic(20)));
-
-        itemDao.save(new ItemEntity("Rose","Rose", 10));
-        itemDao.save(new ItemEntity("Lily", "Lily", 12));
-        itemDao.save(new ItemEntity("Orchid", "Orchid", 7));
     }
 
     private ItemModel getItemModel() throws Exception {

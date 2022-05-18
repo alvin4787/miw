@@ -25,6 +25,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @Transactional
@@ -57,13 +58,17 @@ public class ItemService {
     private static Logger LOGGER = LoggerFactory.getLogger(ItemService.class);
 
     public ItemListResponse getAllItems() {
-        return new ItemListResponse(new ItemMapper().toModelList(itemDao.findAll()));
+        LOGGER.debug("Method to return all items");
+        List<ItemModel> modelList = new ItemMapper().toModelList(itemDao.findAll());
+        LOGGER.debug("Returning {} number of items", modelList.size());
+        return new ItemListResponse(modelList);
     }
 
     public ItemViewResponse viewItem(String itemUid) throws CustomException {
         LOGGER.debug("View item with uid: {}", itemUid);
         ItemEntity itemEntity = itemDao.findDistinctFirstByUid(itemUid);
         if(itemEntity == null) {
+            LOGGER.debug("No item found with uid = {}", itemUid);
             throw new CustomException(ErrorCode.ITEM_NOT_FOUND);
         }
 
@@ -80,6 +85,7 @@ public class ItemService {
 
     public void processSurging(ItemViewCountEntity itemViewCountEntity) {
         if(requireSurging(itemViewCountEntity)) {
+            LOGGER.debug("Item with uid = {} requires price surging", itemViewCountEntity.getItem().getUid());
             ItemEntity itemEntity = itemViewCountEntity.getItem();
             float itemPrice = itemEntity.getPrice();
             float surgedPrice = itemPrice + (itemPrice * ((float)surgePriceIncrease/100f));
@@ -91,8 +97,10 @@ public class ItemService {
     }
 
     public OrderResponse buyItem(String itemUid, String userEmail) throws CustomException {
+        LOGGER.debug("Buying item with uid = {} by email = {}", itemUid, userEmail);
         ItemEntity itemEntity = itemDao.findDistinctFirstByUid(itemUid);
         if(itemEntity == null) {
+            LOGGER.debug("Item with uid = {} not found", itemUid);
             throw new CustomException(ErrorCode.ITEM_NOT_FOUND);
         }
         UserEntity userEntity = userDao.findDistinctFirstByEmail(userEmail);
