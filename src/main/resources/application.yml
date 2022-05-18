@@ -10,6 +10,7 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
+    defer-datasource-initialization: true
   h2:
     console:
       enabled: true
@@ -28,6 +29,10 @@ spring:
     init:
       mode: always
 
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
 logging:
   level:
     root: INFO
@@ -38,3 +43,7 @@ gildedrose:
     threshold: 10
     offset: 1
     price_increase: 10
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

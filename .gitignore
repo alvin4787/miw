@@ -11,9 +11,10 @@ Thumbs.db
 *.iws
 *.ipr
 
+/target/**
 *.log
 *.jar
 *.war
 **/target/*
 *.class
-*.mv.db
+*.db
