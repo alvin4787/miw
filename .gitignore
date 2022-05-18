@@ -1,0 +1,12 @@
+### OS-X generated files
+.Trashes
+.Spotlight-V100
+.DS_Store*
+Thumbs.db
+
+### IntelliJ Files
+**/.idea/**
+.idea/**
+*.iml
+*.iws
+*.ipr
