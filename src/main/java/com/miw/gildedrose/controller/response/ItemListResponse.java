@@ -4,7 +4,7 @@ import com.miw.gildedrose.model.ItemModel;
 
 import java.util.List;
 
-public class ItemListResponse {
+public class ItemListResponse extends ItemResponse {
 
     public ItemListResponse() {
     }

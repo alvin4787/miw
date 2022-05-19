@@ -1,6 +1,7 @@
 package com.miw.gildedrose.controller;
 
 import com.miw.gildedrose.controller.response.ItemListResponse;
+import com.miw.gildedrose.controller.response.ItemResponse;
 import com.miw.gildedrose.controller.response.ItemViewResponse;
 import com.miw.gildedrose.controller.response.OrderResponse;
 import com.miw.gildedrose.exception.CustomException;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.constraints.NotEmpty;
 
 @RestController
 @RequestMapping(value = "/item")
@@ -35,5 +38,10 @@ public class ItemController {
     public OrderResponse buyItem(@RequestParam(name = "itemUid") String itemUid) throws CustomException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return itemService.buyItem(itemUid, authentication.getName());
+    }
+
+    @RequestMapping(value = "/search/{itemName}", method = RequestMethod.GET)
+    public ItemResponse searchItems(@NotEmpty @PathVariable(name = "itemName") String itemName) throws CustomException {
+        return itemService.viewItemByName(itemName);
     }
 }

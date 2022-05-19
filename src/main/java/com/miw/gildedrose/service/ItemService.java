@@ -1,6 +1,7 @@
 package com.miw.gildedrose.service;
 
 import com.miw.gildedrose.controller.response.ItemListResponse;
+import com.miw.gildedrose.controller.response.ItemResponse;
 import com.miw.gildedrose.controller.response.ItemViewResponse;
 import com.miw.gildedrose.controller.response.OrderResponse;
 import com.miw.gildedrose.dao.ItemDao;
@@ -23,6 +24,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -64,6 +66,24 @@ public class ItemService {
         return new ItemListResponse(modelList);
     }
 
+    public ItemResponse viewItemByName(String itemName) throws CustomException {
+        LOGGER.debug("View item with name: {}", itemName);
+        List<ItemEntity> itemEntities = itemDao.findDistinctByName(itemName);
+        if(CollectionUtils.isEmpty(itemEntities)) {
+            LOGGER.debug("No item found with name = {}", itemName);
+            throw new CustomException(ErrorCode.ITEM_NOT_FOUND);
+        }
+
+        LOGGER.debug("{} item(s) found", itemEntities.size());
+
+        if(itemEntities.size() == 1) {
+            increaseViewCountAndPublishEvent(itemEntities.get(0));
+            return new ItemViewResponse(new ItemMapper().toModel(itemEntities.get(0), new ItemModel()));
+        }
+
+        return new ItemListResponse(new ItemMapper().toModelList(itemEntities));
+    }
+
     public ItemViewResponse viewItem(String itemUid) throws CustomException {
         LOGGER.debug("View item with uid: {}", itemUid);
         ItemEntity itemEntity = itemDao.findDistinctFirstByUid(itemUid);
@@ -72,14 +92,8 @@ public class ItemService {
             throw new CustomException(ErrorCode.ITEM_NOT_FOUND);
         }
 
-        ItemViewCountEntity itemViewCountEntity = itemViewCountDao.findDistinctByItem_Id(itemEntity.getId());
-        if(itemViewCountEntity == null) {
-            itemViewCountEntity = new ItemViewCountEntity();
-        }
-        itemViewCountEntity.setItem(itemEntity);
-        itemViewCountEntity.setViewCount(itemViewCountEntity.getViewCount() + 1);
-        itemViewCountEntity = itemViewCountDao.save(itemViewCountEntity);
-        eventPublisher.publishEvent(new ItemViewedEvent(this, itemViewCountEntity));
+        increaseViewCountAndPublishEvent(itemEntity);
+
         return new ItemViewResponse(new ItemMapper().toModel(itemEntity, new ItemModel()));
     }
 
@@ -105,6 +119,17 @@ public class ItemService {
         }
         UserEntity userEntity = userDao.findDistinctFirstByEmail(userEmail);
         return new OrderResponse(processOrder(itemEntity, userEntity).getUid());
+    }
+
+    private void increaseViewCountAndPublishEvent(ItemEntity itemEntity) {
+        ItemViewCountEntity itemViewCountEntity = itemViewCountDao.findDistinctByItem_Id(itemEntity.getId());
+        if(itemViewCountEntity == null) {
+            itemViewCountEntity = new ItemViewCountEntity();
+        }
+        itemViewCountEntity.setItem(itemEntity);
+        itemViewCountEntity.setViewCount(itemViewCountEntity.getViewCount() + 1);
+        itemViewCountEntity = itemViewCountDao.save(itemViewCountEntity);
+        eventPublisher.publishEvent(new ItemViewedEvent(this, itemViewCountEntity));
     }
 
     private boolean requireSurging(ItemViewCountEntity itemViewCountEntity) {

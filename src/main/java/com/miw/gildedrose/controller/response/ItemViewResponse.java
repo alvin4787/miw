@@ -2,7 +2,7 @@ package com.miw.gildedrose.controller.response;
 
 import com.miw.gildedrose.model.ItemModel;
 
-public class ItemViewResponse {
+public class ItemViewResponse extends ItemResponse {
 
     public ItemViewResponse(ItemModel item) {
         this.item = item;
